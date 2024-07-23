@@ -3,9 +3,9 @@ from product.models.category import Category
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fieldsets = [
-           "name",
-           "slug",
-           "description",
-           "active",
+        fields = [
+             'name',
+             'slug',
+             'description',
+             'active'
         ]
