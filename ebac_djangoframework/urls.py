@@ -1,5 +1,5 @@
 """
-URL configuration for ebac_djangoframework project.
+URL configuration for bookstore project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,8 +16,10 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    re_path('bookstore/(?P<version>(v1|v2))/', include('order.urls')),
+    re_path('bookstore/(?P<version>(v1|v2))/', include('product.urls'))
 ]

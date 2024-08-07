@@ -4,7 +4,7 @@ from .category import Category
 class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.PositiveIntegerField(null=False)
-    stock = models.IntegerField()
+    stock = models.IntegerField(null=True)
     description = models.TextField(max_length=500, blank=True, null=False)
     active = models.BooleanField(default=True)
     categories = models.ManyToManyField(Category, blank=False)
